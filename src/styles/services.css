@@ -1,0 +1,391 @@
+/* ==========================================
+   GOOGLE FONT
+========================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+/* ==========================================
+   GLOBAL
+========================================== */
+
+.services-page {
+  position: relative;
+
+  padding: 120px 6%;
+  overflow: hidden;
+
+  background: #f8fafc;
+
+  font-family: "Inter", sans-serif;
+}
+
+/* ==========================================
+   BACKGROUND EFFECTS
+========================================== */
+
+.services-page::before,
+.services-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  filter: blur(140px);
+
+  z-index: 0;
+}
+
+.services-page::before {
+  top: -200px;
+  left: -200px;
+
+  background: rgba(20, 184, 166, 0.15);
+}
+
+.services-page::after {
+  bottom: -250px;
+  right: -200px;
+
+  background: rgba(14, 165, 233, 0.15);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.services-header {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  max-width: 900px;
+  margin: auto;
+}
+
+.services-header span {
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  background: rgba(20, 184, 166, 0.12);
+
+  border-radius: 50px;
+
+  color: #14b8a6;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 25px;
+}
+
+.services-header h1 {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  color: #0f172a;
+
+  margin-bottom: 25px;
+}
+
+.services-header p {
+  font-size: 1.1rem;
+
+  color: #64748b;
+
+  line-height: 1.8;
+
+  max-width: 750px;
+  margin: auto;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.services-grid {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 35px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.service-card {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 28px;
+
+  padding: 40px 30px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transition: 0.45s ease;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Animated border */
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    130deg,
+    transparent,
+    rgba(14, 165, 233, 0.2),
+    transparent
+  );
+
+  transform: translateX(-100%);
+
+  transition: 0.8s;
+}
+
+.service-card:hover::before {
+  transform: translateX(100%);
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.12),
+    0 10px 25px rgba(20, 184, 166, 0.15);
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.service-icon {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 22px;
+
+  font-size: 2.4rem;
+
+  color: white;
+
+  margin-bottom: 30px;
+
+  background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+
+  box-shadow: 0 15px 30px rgba(20, 184, 166, 0.3);
+
+  transition: 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: rotate(-10deg) scale(1.08);
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.service-card h3 {
+  font-size: 1.4rem;
+
+  color: #0f172a;
+
+  margin-bottom: 15px;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+}
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.service-card p {
+  color: #64748b;
+
+  line-height: 1.8;
+
+  margin-bottom: 25px;
+
+  font-size: 0.98rem;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.service-card button {
+  border: none;
+
+  background: transparent;
+
+  color: #0ea5e9;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.service-card:hover button {
+  transform: translateX(8px);
+}
+
+/* ==========================================
+   FLOATING ANIMATION
+========================================== */
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.service-icon {
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* ==========================================
+   REVEAL ANIMATION
+========================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+  .services-page {
+    padding: 90px 5%;
+  }
+
+  .services-grid {
+    gap: 25px;
+  }
+
+  .service-card {
+    padding: 30px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .services-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .services-header p {
+    font-size: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 28px;
+  }
+
+  .service-icon {
+    width: 75px;
+    height: 75px;
+
+    font-size: 2rem;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .services-page {
+    padding: 80px 20px;
+  }
+
+  .services-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .services-header span {
+    font-size: 0.8rem;
+  }
+
+  .service-card {
+    border-radius: 22px;
+  }
+
+  .service-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .service-card p {
+    font-size: 0.92rem;
+  }
+}

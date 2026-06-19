@@ -1,0 +1,329 @@
+/* ========================================================= */
+/* GOOGLE FONT */
+/* ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ========================================================= */
+/* NAVBAR WRAPPER */
+/* ========================================================= */
+
+.navbar-wrapper {
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 9999;
+
+  padding: 20px 5%;
+
+  transition: 0.4s ease;
+
+  backdrop-filter: blur(20px);
+
+  background: rgba(5, 8, 22, 0.7);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ========================================================= */
+/* NAVBAR */
+/* ========================================================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+/* ========================================================= */
+/* LOGO */
+/* ========================================================= */
+
+.logo {
+  text-decoration: none;
+
+  position: relative;
+
+  z-index: 99999;
+}
+
+.logo-text {
+  font-size: 34px;
+  font-weight: 800;
+
+  background: linear-gradient(to right, #ffffff, #38bdf8);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  letter-spacing: 1px;
+
+  transition: 0.4s ease;
+}
+
+.logo:hover .logo-text {
+  letter-spacing: 2px;
+}
+
+/* ========================================================= */
+/* NAV LINKS */
+/* ========================================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  position: relative;
+
+  transition: 0.4s ease;
+}
+
+/* HOVER LINE EFFECT */
+
+.nav-links li a::after {
+  content: "";
+
+  position: absolute;
+
+  width: 0%;
+  height: 2px;
+
+  left: 0;
+  bottom: -8px;
+
+  background: linear-gradient(to right, #2563eb, #38bdf8);
+
+  border-radius: 10px;
+
+  transition: 0.4s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: #38bdf8;
+}
+
+/* ========================================================= */
+/* NAV BUTTON */
+/* ========================================================= */
+
+.nav-btn {
+  border: none;
+  outline: none;
+
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+
+  color: white;
+
+  padding: 14px 28px;
+
+  border-radius: 50px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.4s ease;
+
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+}
+
+.nav-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.5);
+}
+
+/* ========================================================= */
+/* RIGHT SECTION */
+/* ========================================================= */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ========================================================= */
+/* TOGGLE BUTTON */
+/* ========================================================= */
+
+.menu-toggle {
+  width: 50px;
+  height: 50px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 22px;
+
+  transition: 0.4s ease;
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  z-index: 99999;
+}
+
+.menu-toggle:hover {
+  background: rgba(56, 189, 248, 0.2);
+
+  color: #38bdf8;
+}
+
+/* ========================================================= */
+/* MOBILE BUTTON */
+/* ========================================================= */
+
+.mobile-btn-wrapper {
+  display: none;
+}
+
+/* ========================================================= */
+/* NAVBAR ANIMATION */
+/* ========================================================= */
+
+.navbar-wrapper {
+  animation: navbarFade 1s ease;
+}
+
+@keyframes navbarFade {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================================= */
+/* RESPONSIVE */
+/* ========================================================= */
+
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .desktop-btn {
+    display: none;
+  }
+
+  .nav-links {
+    position: fixed;
+
+    top: 0;
+    right: -100%;
+
+    width: 100%;
+    max-width: 420px;
+
+    height: 100vh;
+
+    background: rgba(5, 8, 22, 0.98);
+
+    backdrop-filter: blur(25px);
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+
+    transition: 0.5s ease;
+
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li a {
+    font-size: 22px;
+  }
+
+  .mobile-btn-wrapper {
+    display: flex;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    padding: 18px 5%;
+  }
+
+  .logo-text {
+    font-size: 28px;
+  }
+
+  .nav-links {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .menu-toggle {
+    width: 45px;
+    height: 45px;
+
+    font-size: 20px;
+  }
+
+  .nav-links li a {
+    font-size: 20px;
+  }
+
+  .nav-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mobile-btn-wrapper {
+    width: 80%;
+  }
+}

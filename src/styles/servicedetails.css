@@ -1,0 +1,448 @@
+/* ==================================================
+   METROIX SERVICE DETAILS PAGE
+   FULLY ISOLATED CSS
+================================================== */
+
+.metroix-service-page {
+  width: 100%;
+  overflow-x: hidden;
+  background: #07111f;
+  color: white;
+}
+
+/* ==================================================
+   HERO SECTION
+================================================== */
+
+.metroix-service-hero {
+  position: relative;
+  min-height: 85vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 120px 5%;
+  overflow: hidden;
+}
+
+.metroix-service-hero::before {
+  content: "";
+
+  position: absolute;
+  width: 650px;
+  height: 650px;
+
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.25),
+    transparent 70%
+  );
+
+  top: -150px;
+  left: -150px;
+
+  animation: metroixFloat1 10s infinite ease-in-out;
+}
+
+.metroix-service-hero::after {
+  content: "";
+
+  position: absolute;
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(20, 184, 166, 0.22),
+    transparent 70%
+  );
+
+  bottom: -100px;
+  right: -100px;
+
+  animation: metroixFloat2 12s infinite ease-in-out;
+}
+
+.metroix-service-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+}
+
+.metroix-service-hero span {
+  color: #22d3ee;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.metroix-service-hero h1 {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 25px;
+
+  background: linear-gradient(90deg, #ffffff, #38bdf8, #2dd4bf);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metroix-service-hero p {
+  max-width: 800px;
+  margin: auto;
+
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==================================================
+   OVERVIEW
+================================================== */
+
+.metroix-service-overview {
+  padding: 120px 5%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.metroix-service-overview-left h2 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+.metroix-service-overview-left p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+
+.metroix-service-btn {
+  background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+
+  color: white;
+  border: none;
+
+  padding: 16px 35px;
+
+  border-radius: 50px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.4s;
+}
+
+.metroix-service-btn:hover {
+  transform: translateY(-5px);
+}
+
+.metroix-service-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.metroix-feature-card {
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 24px;
+
+  padding: 35px;
+
+  text-align: center;
+
+  transition: 0.4s;
+}
+
+.metroix-feature-card:hover {
+  transform: translateY(-10px);
+
+  border-color: #14b8a6;
+}
+
+.metroix-feature-card svg {
+  font-size: 2.5rem;
+  color: #22d3ee;
+  margin-bottom: 20px;
+}
+
+/* ==================================================
+   BENEFITS
+================================================== */
+
+.metroix-benefits {
+  padding: 120px 5%;
+}
+
+.metroix-benefits-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 70px;
+}
+
+.metroix-benefits-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 30px;
+}
+
+.metroix-benefit-card {
+  background: rgba(255, 255, 255, 0.04);
+
+  border-radius: 25px;
+
+  padding: 35px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.4s;
+}
+
+.metroix-benefit-card:hover {
+  transform: translateY(-10px);
+}
+
+.metroix-benefit-card svg {
+  font-size: 2.2rem;
+  color: #22d3ee;
+  margin-bottom: 15px;
+}
+
+/* ==================================================
+   TIMELINE
+================================================== */
+
+.metroix-process {
+  padding: 120px 5%;
+}
+
+.metroix-process-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 80px;
+}
+
+.metroix-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.metroix-process-card {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border-radius: 24px;
+
+  padding: 40px 30px;
+
+  text-align: center;
+}
+
+.metroix-process-card span {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto auto 20px;
+
+  border-radius: 50%;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+}
+
+/* ==================================================
+   INDUSTRIES
+================================================== */
+
+.metroix-industries {
+  padding: 120px 5%;
+}
+
+.metroix-industries-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+}
+
+.metroix-industries-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 25px;
+}
+
+.metroix-industry-box {
+  background: rgba(255, 255, 255, 0.04);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.4s;
+}
+
+.metroix-industry-box:hover {
+  transform: translateY(-8px);
+  border-color: #22d3ee;
+}
+
+/* ==================================================
+   CTA
+================================================== */
+
+.metroix-service-cta {
+  padding: 140px 5%;
+
+  text-align: center;
+}
+
+.metroix-service-cta-box {
+  max-width: 1100px;
+
+  margin: auto;
+
+  background: linear-gradient(
+    135deg,
+    rgba(14, 165, 233, 0.15),
+    rgba(20, 184, 166, 0.15)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 40px;
+
+  padding: 80px 40px;
+}
+
+.metroix-service-cta-box h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 20px;
+}
+
+.metroix-service-cta-box p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.metroix-service-cta-box button {
+  margin-top: 35px;
+
+  background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+
+  border: none;
+  color: white;
+
+  padding: 18px 40px;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.metroix-service-cta-box button:hover {
+  transform: translateY(-5px);
+}
+
+/* ==================================================
+   ANIMATIONS
+================================================== */
+
+@keyframes metroixFloat1 {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+}
+
+@keyframes metroixFloat2 {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 992px) {
+  .metroix-service-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .metroix-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 768px) {
+  .metroix-service-hero {
+    min-height: auto;
+    padding: 100px 20px;
+  }
+
+  .metroix-service-overview,
+  .metroix-benefits,
+  .metroix-process,
+  .metroix-industries,
+  .metroix-service-cta {
+    padding: 80px 20px;
+  }
+
+  .metroix-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metroix-service-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metroix-service-overview-left h2,
+  .metroix-benefits-title,
+  .metroix-process-title,
+  .metroix-industries-title {
+    font-size: 2rem;
+  }
+}
