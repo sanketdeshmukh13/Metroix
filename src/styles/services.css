@@ -389,3 +389,332 @@
     font-size: 0.92rem;
   }
 }
+/* =====================================================
+   SERVICE GALLERY
+===================================================== */
+
+.metroix-gallery {
+  padding: 110px 6%;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.metroix-gallery::before {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  top: -180px;
+  right: -180px;
+
+  border-radius: 50%;
+
+  background: rgba(14, 165, 233, 0.08);
+
+  filter: blur(120px);
+}
+
+.metroix-gallery-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  text-align: center;
+
+  font-weight: 800;
+
+  color: #0f172a;
+
+  margin-bottom: 18px;
+}
+
+.metroix-gallery-title::after {
+  content: "";
+
+  display: block;
+
+  width: 90px;
+  height: 4px;
+
+  margin: 18px auto 0;
+
+  border-radius: 50px;
+
+  background: linear-gradient(90deg, #14b8a6, #0ea5e9);
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.metroix-gallery-grid {
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+  gap: 45px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.metroix-gallery-card {
+  background: #fff;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.06),
+    0 5px 10px rgba(0, 0, 0, 0.03);
+
+  transition: 0.45s ease;
+
+  position: relative;
+}
+
+.metroix-gallery-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.metroix-gallery-card img {
+  width: 100%;
+
+  height: 260px;
+
+  object-fit: cover;
+
+  transition: 0.6s ease;
+
+  display: block;
+}
+
+.metroix-gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Dark overlay */
+
+.metroix-gallery-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.35), transparent 45%);
+
+  opacity: 0;
+
+  transition: 0.5s;
+
+  pointer-events: none;
+}
+
+.metroix-gallery-card:hover::before {
+  opacity: 1;
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.metroix-gallery-content {
+  padding: 28px;
+}
+
+.metroix-gallery-content h3 {
+  color: #0f172a;
+
+  font-size: 1.35rem;
+
+  margin-bottom: 15px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+.metroix-gallery-content p {
+  color: #64748b;
+
+  line-height: 1.9;
+
+  font-size: 0.98rem;
+}
+
+/* =====================================================
+   IMAGE BORDER EFFECT
+===================================================== */
+
+.metroix-gallery-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 24px;
+
+  padding: 1.5px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(20, 184, 166, 0.5),
+    rgba(14, 165, 233, 0.4)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask-composite: exclude;
+
+  opacity: 0;
+
+  transition: 0.5s;
+}
+
+.metroix-gallery-card:hover::after {
+  opacity: 1;
+}
+
+/* =====================================================
+   STAGGER ANIMATION
+===================================================== */
+
+.metroix-gallery-card {
+  animation: galleryFade 0.8s ease both;
+}
+
+.metroix-gallery-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.metroix-gallery-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.metroix-gallery-card:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.metroix-gallery-card:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+@keyframes galleryFade {
+  from {
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 992px) {
+  .metroix-gallery {
+    padding: 90px 5%;
+  }
+
+  .metroix-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+  }
+
+  .metroix-gallery-card img {
+    height: 230px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .metroix-gallery {
+    padding: 80px 20px;
+  }
+
+  .metroix-gallery-grid {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .metroix-gallery-card img {
+    height: 220px;
+  }
+
+  .metroix-gallery-content {
+    padding: 22px;
+  }
+
+  .metroix-gallery-content h3 {
+    font-size: 1.18rem;
+  }
+
+  .metroix-gallery-content p {
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+  }
+
+  .metroix-gallery-title {
+    font-size: 2rem;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .metroix-gallery-card {
+    border-radius: 18px;
+  }
+
+  .metroix-gallery-card img {
+    height: 200px;
+  }
+
+  .metroix-gallery-content {
+    padding: 18px;
+  }
+
+  .metroix-gallery-content h3 {
+    font-size: 1.05rem;
+  }
+
+  .metroix-gallery-content p {
+    font-size: 0.9rem;
+  }
+
+  .metroix-gallery-title {
+    font-size: 1.7rem;
+  }
+}

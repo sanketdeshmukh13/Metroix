@@ -155,12 +155,16 @@ function Footer() {
 
             <div className="contact-item">
               <FaPhoneAlt />
-              <span>+91 XXXXX XXXXX</span>
+              <span>+91 9325417737</span>
+              <FaPhoneAlt />
+              <span>+91 7666646391</span>
             </div>
 
             <div className="contact-item">
               <FaEnvelope />
-              <span>info@metroix.in</span>
+              <span>info@metroix@gmail.com</span>
+              <FaEnvelope />
+              <span>sales.metroix@gmail.com</span>
             </div>
           </div>
         </div>
